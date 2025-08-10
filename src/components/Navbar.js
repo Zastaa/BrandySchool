@@ -9,7 +9,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const vh = window.innerHeight;
-      const scrollThreshold = vh + 1;
+      const scrollThreshold = vh - 1;
 
       if (window.scrollY > scrollThreshold) {
         setIsScrolled(true);
@@ -33,12 +33,13 @@ const Navbar = () => {
     >
       <div className="flex items-center justify-between">
         <div className="font-bold text-lg text-white">
-          Brandy's
+          Brandly's
         </div>
 
         <div className="hidden md:flex space-x-8 text-white">
           <a href="#Hero" className="hover:text-blue-300 transition">Home</a>
           <a href="#About" className="hover:text-blue-300 transition">About</a>
+          <a href="#Gallery" className="hover:text-blue-300 transition">Gallery</a>
           <a href="#Jurusan" className="hover:text-blue-300 transition">Jurusan</a>
           <a href="#Fasilitas" className="hover:text-blue-300 transition">Fasilitas</a>
         </div>
@@ -64,6 +65,7 @@ const Navbar = () => {
         <div className="md:hidden mt-3 space-y-2 text-white">
           <a href="#Hero" className="block hover:text-blue-300 transition">Home</a>
           <a href="#About" className="block hover:text-blue-300 transition">About</a>
+          <a href="#Gallery" className="block hover:text-blue-300 transition">Gallery</a>
           <a href="#Jurusan" className="block hover:text-blue-300 transition">Jurusan</a>
           <a href="#Fasilitas" className="block hover:text-blue-300 transition">Fasilitas</a>
         </div>

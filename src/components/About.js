@@ -24,7 +24,7 @@ const About = () => {
             </div>
             <div className="relative text-center p-6 px-6 py-14 md:px-12">
               <h2 className="mb-6 text-3xl text-white">
-                Apa itu Brandy's
+                Apa itu Brandly's
               </h2>
             </div>
           </div>
@@ -35,7 +35,7 @@ const About = () => {
             </div>
             <div className="relative text-center p-6 px-6 py-14 md:px-12">
               <h2 className="mb-6 text-3xl text-white">
-                Apa itu Brandy's
+                Apa itu Brandly's
               </h2>
             </div>
           </div>

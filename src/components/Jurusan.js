@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -14,7 +15,7 @@ const Jurusan = () => {
     {
       id: 1,
       name: 'Multimedia',
-      iconUrl: 'https://via.placeholder.com/150/007bff/ffffff?text=MM',
+      iconUrl: '/images/mm.jpg',
       iconBorderColor: 'border-blue-500', 
       textColor: 'text-blue-700',
       bgColor: 'bg-blue-500', 
@@ -26,7 +27,7 @@ const Jurusan = () => {
     {
       id: 2,
       name: 'Rekayasa Perangkat Lunak',
-      iconUrl: 'https://via.placeholder.com/150/28a745/ffffff?text=RPL',
+      iconUrl: '/images/rpl.jpg',
       iconBorderColor: 'border-green-500',
       textColor: 'text-green-700',
       bgColor: 'bg-green-500',
@@ -38,7 +39,7 @@ const Jurusan = () => {
     {
       id: 3,
       name: 'Teknik Komputer & Jaringan',
-      iconUrl: 'https://via.placeholder.com/150/ffc107/333333?text=TKJ',
+      iconUrl: '/images/tkj.jpg',
       iconBorderColor: 'border-yellow-500',
       textColor: 'text-yellow-700',
       bgColor: 'bg-yellow-500',
@@ -50,7 +51,7 @@ const Jurusan = () => {
     {
         id: 4,
         name: 'Desain Komunikasi Visual',
-        iconUrl: 'https://via.placeholder.com/150/a855f7/ffffff?text=DKV',
+        iconUrl: '/images/dkv.jpg',
         iconBorderColor: 'border-purple-500',
         textColor: 'text-purple-700',
         bgColor: 'bg-purple-500',
@@ -62,7 +63,7 @@ const Jurusan = () => {
     {
         id: 5,
         name: 'Akuntansi Keuangan Lembaga',
-        iconUrl: 'https://via.placeholder.com/150/F472B6/ffffff?text=AKL',
+        iconUrl: '/images/ak.jpg',
         iconBorderColor: 'border-pink-500',
         textColor: 'text-pink-700',
         bgColor: 'bg-pink-500',
@@ -74,7 +75,7 @@ const Jurusan = () => {
     {
         id: 6,
         name: 'Otomatisasi & Tata Kelola Perkantoran',
-        iconUrl: 'https://via.placeholder.com/150/60A5FA/ffffff?text=OTKP',
+        iconUrl: '/images/perkantoran.png',
         iconBorderColor: 'border-indigo-500',
         textColor: 'text-indigo-700',
         bgColor: 'bg-indigo-500',
@@ -86,7 +87,7 @@ const Jurusan = () => {
   ];
 
   return (
-    <section id='Jurusan' className="py-16 px-4 bg-gray-50 overflow-hidden">
+    <section id='Jurusan' className="py-20 px-4 bg-white overflow-hidden">
       <h2 className="text-center text-gray-800 text-3xl md:text-4xl font-extrabold mb-4">
         Jelajahi Jurusan Unggulan Kami
       </h2>
@@ -96,59 +97,61 @@ const Jurusan = () => {
 
       <div className="relative max-w-6xl mx-auto">
         <Swiper
-          // Install Swiper modules
           modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30} // Jarak antar slide
-          slidesPerView={1} // Default: 1 slide per tampilan
-          navigation // Aktifkan tombol navigasi (panah)
-          pagination={{ clickable: true }} // Aktifkan indikator titik (dots)
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
           autoplay={{
-            delay: 4500, // Otomatis geser setiap 4.5 detik
-            disableOnInteraction: false, // Lanjut autoplay setelah interaksi user
+            delay: 4500, 
+            disableOnInteraction: false,
           }}
-          loop={true} // Membuat carousel berulang (seamless loop)
+          loop={true}
           breakpoints={{
-            // Konfigurasi responsif Swiper
-            640: { // md breakpoint (bisa diatur sesuai keinginan Tailwind sm/md/lg)
+            640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            1024: { // lg breakpoint
+            1024: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
           }}
-          className="jurusan-swiper-container pb-12" // Kelas tambahan untuk styling, dan padding bawah untuk pagination dots
+          className="jurusan-swiper-container pb-12"
         >
           {jurusanData.map((jurusan) => (
             <SwiperSlide key={jurusan.id}>
-              <div className="bg-white rounded-lg p-8 flex flex-col items-center text-center h-full shadow-md hover:shadow-lg transition-shadow duration-300">
-                <img
-                  src={jurusan.iconUrl}
-                  alt={`Ikon ${jurusan.name}`}
-                  className={`w-28 h-28 rounded-full object-cover mb-6 border-4 ${jurusan.iconBorderColor}`}
-                />
-                <h3 className={`text-2xl font-bold mb-4 ${jurusan.textColor}`}>
-                  {jurusan.name}
-                </h3>
-                <p className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
-                  {jurusan.description}
-                </p>
-                <ul className="text-gray-700 list-none p-0 mb-8 w-full">
-                  {jurusan.highlights.map((highlight, hIndex) => (
-                    <li key={hIndex} className="mb-2 flex items-center justify-center">
-                      <span className={`mr-2 ${jurusan.textColor}`}>✔</span>
-                      <strong className="text-base">{highlight}</strong>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={jurusan.link}
-                  className={`inline-block py-3 px-8 ${jurusan.bgColor} text-white font-semibold rounded-full shadow-lg ${jurusan.shadowColor} hover:brightness-110 hover:scale-105 transition transform duration-300 ease-out`}
-                >
-                  Pelajari Lebih Lanjut
-                </a>
-              </div>
+                <div className="bg-white rounded-lg p-8 flex flex-col items-center text-center h-full shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className={`relative w-28 h-28 rounded-full mb-6 border-4 overflow-hidden ${jurusan.iconBorderColor}`}>
+                    <Image
+                      src={jurusan.iconUrl}
+                      alt={`Ikon ${jurusan.name}`}
+                      className="object-cover"
+                      sizes="112"
+                      fill
+                    />
+                  </div>
+                  <h3 className={`text-2xl font-bold mb-4 ${jurusan.textColor}`}>
+                    {jurusan.name}
+                  </h3>
+                  <p className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
+                    {jurusan.description}
+                  </p>
+                  <ul className="text-gray-700 list-none p-0 mb-8 w-full">
+                    {jurusan.highlights.map((highlight, hIndex) => (
+                      <li key={hIndex} className="mb-2 flex items-center justify-center">
+                        <span className={`mr-2 ${jurusan.textColor}`}>✔</span>
+                        <strong className="text-base">{highlight}</strong>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={jurusan.link}
+                    className={`inline-block py-3 px-8 ${jurusan.bgColor} text-white font-semibold rounded-full shadow-lg ${jurusan.shadowColor} hover:brightness-110 hover:scale-105 transition transform duration-300 ease-out`}
+                  >
+                    Pelajari Lebih Lanjut
+                  </a>
+                </div>
             </SwiperSlide>
           ))}
         </Swiper>
