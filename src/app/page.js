@@ -6,6 +6,7 @@ import Fasilitas from "@/components/Fasilitas";
 import FooterSection from "@/components/Footer";
 import Contact from "@/components/Contact";
 import Gallery from "@/components/Gallery";
+import GuruDanStaff from "@/components/Guru";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Gallery />
       <Jurusan />
       <Fasilitas />
+      <GuruDanStaff />
       <Contact />
       <FooterSection />
     </>

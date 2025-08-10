@@ -42,6 +42,7 @@ const Navbar = () => {
           <a href="#Gallery" className="hover:text-blue-300 transition">Gallery</a>
           <a href="#Jurusan" className="hover:text-blue-300 transition">Jurusan</a>
           <a href="#Fasilitas" className="hover:text-blue-300 transition">Fasilitas</a>
+          <a href="#GuruStaff" className="hover:text-blue-300 transition">Guru & Staff</a>
         </div>
 
         <button
@@ -68,6 +69,7 @@ const Navbar = () => {
           <a href="#Gallery" className="block hover:text-blue-300 transition">Gallery</a>
           <a href="#Jurusan" className="block hover:text-blue-300 transition">Jurusan</a>
           <a href="#Fasilitas" className="block hover:text-blue-300 transition">Fasilitas</a>
+          <a href="#GuruStaff" className="block hover:text-blue-300 transition">Guru & Staff</a>
         </div>
       )}
     </nav>
